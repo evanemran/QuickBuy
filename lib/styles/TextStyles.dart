@@ -20,6 +20,14 @@ TextStyle landingProductText(){
       );
 }
 
+TextStyle landingPriceText(){
+  return const TextStyle(
+    color: ThemeColors.mainColor,
+    fontFamily: 'Montserrat',
+    fontSize: 14.0, fontWeight: FontWeight.bold,
+  );
+}
+
 TextStyle drawerHeaderTextStyle(){
   return const TextStyle(
       color: Colors.white,

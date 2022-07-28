@@ -38,23 +38,29 @@ Widget _showGrids(BuildContext context, ProductsResponse? productsResponse) {
   var size = MediaQuery.of(context).size;
 
   /*24 is for notification bar on Android*/
-  final double itemHeight = (size.height - kToolbarHeight - 24) / 2;
+  // final double itemHeight = (size.height - kToolbarHeight - 24) / 2;
+  // final double itemWidth = size.width / 2;
+
+  double cardWidth = MediaQuery.of(context).size.width / 3.3;
+  double cardHeight = MediaQuery.of(context).size.height / 3.6;
+
+  final double itemHeight = (size.height) / 2;
   final double itemWidth = size.width / 2;
+
   return Container(
     color: ThemeColors.whiteLite,
     child: Expanded(child: GridView.count(
         crossAxisCount: 3,
-       shrinkWrap: false,
-        childAspectRatio: 0.5,
+        shrinkWrap: true,
+        childAspectRatio: itemHeight / itemWidth,
         padding: const EdgeInsets.all(4.0),
-        mainAxisSpacing: 4.0,
-        crossAxisSpacing: 4.0,
+        mainAxisSpacing: 2.0,
+        crossAxisSpacing: 2.0,
         children: list!.map((Products product) {
           return GridTile(
               child: Card(
                 color: ThemeColors.whiteLite,
                 elevation: 8,
-                margin: EdgeInsets.all(8),
                 child: SizedBox(
                   child: Column(
                     children: [
@@ -74,8 +80,8 @@ Widget _showGrids(BuildContext context, ProductsResponse? productsResponse) {
                         },
                         // fit: BoxFit.fitHeight,
                       ),),
-                      SizedBox(child: Text(product.name.toString(), style: landingProductText(),),),
-                      SizedBox(child: Text(product.price!.current!.text.toString(), style: landingProductText(),),),
+                      Expanded(child: Text(product.name.toString(), style: landingProductText(),),),
+                      Expanded(child: Text(product.price!.current!.text.toString(), style: landingProductText(),),),
                     ],
                   ),
                 ),
