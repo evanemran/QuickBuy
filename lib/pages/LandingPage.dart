@@ -363,6 +363,7 @@ class _LandingPageState extends State<LandingPage> {
       //   backgroundColor: Colors.black,
       // ),
       body: SingleChildScrollView(child: Column(children: [
+        const SizedBox(height: 20,),
         _getProducts(context, CategoryCodes.SALE, 3),
         const SizedBox(height: 20,),
         _getProducts(context, CategoryCodes.SALE_SHIRT, 1),
@@ -372,6 +373,8 @@ class _LandingPageState extends State<LandingPage> {
         _getProducts(context, CategoryCodes.SALE_SHOES, 1),
         const SizedBox(height: 20,),
         _getProducts(context, CategoryCodes.SALE_SHADES, 1),
+        const SizedBox(height: 20,),
+        _getProducts(context, CategoryCodes.SALE_FACE_BODY, 1),
       ],),),
     );
   }
