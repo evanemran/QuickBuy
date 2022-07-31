@@ -101,6 +101,15 @@ TextStyle categoryTextStyle(){
       fontSize: 16.0);
 }
 
+TextStyle categoryListTextStyle(){
+  return const TextStyle(
+      color: Colors.black,
+      fontFamily: 'Montserrat',
+      fontStyle: FontStyle.normal,
+      fontWeight: FontWeight.bold,
+      fontSize: 24.0);
+}
+
 TextStyle bottomMenuText(){
   return const TextStyle(
       color: ThemeColors.mainColor,
