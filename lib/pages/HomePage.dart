@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:quickbuy/pages/CartPage.dart';
+import 'package:quickbuy/pages/CategoryPage.dart';
 import 'package:quickbuy/pages/LandingPage.dart';
 import 'package:quickbuy/pages/ProfilePage.dart';
 import 'package:quickbuy/pages/SavedPage.dart';
@@ -45,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   static const List<Widget> _bottomMenu = <Widget>[
     LandingPage(title: "Home",),
-    SavedPage(title: "Saved",),
+    CategoryPage(title: "Category",),
     CartPage(title: "Cart",),
     ProfilePage(title: "Profile",),
   ];
@@ -64,6 +65,9 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(_bottomMenu.elementAt(_selectedIndex).toString()),
         backgroundColor: Colors.black,
+        actions: [
+          Row(children: [Icon(Icons.person_pin, color: Colors.white,), SizedBox(width: 8,)],)
+        ],
       ),
       body: Center(
         child: _bottomMenu.elementAt(_selectedIndex),
@@ -186,8 +190,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   label: 'Home',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.favorite, color: Colors.white),
-                  label: 'Saved',
+                  icon: Icon(Icons.category, color: Colors.white),
+                  label: 'Category',
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.shopping_cart, color: Colors.white),

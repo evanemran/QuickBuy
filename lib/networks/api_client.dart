@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:quickbuy/models/responses/ProductDetailResponse.dart';
 import 'package:quickbuy/models/responses/ProductsResponse.dart';
 import 'package:retrofit/http.dart';
 part 'api_client.g.dart';
@@ -16,6 +17,14 @@ abstract class ApiClient {
       @Query("offset") int offset,
       @Query("categoryId") int categoryId,
       @Query("limit") int limit,
+      );
+
+  @GET('products/v3/detail')
+  Future<ProductDetailResponse> getProductDetail(
+      @Header("X-RapidAPI-Key") String apikey,
+      @Header("X-RapidAPI-Host") String appId,
+
+      @Query("id") int id,
       );
 
 }
